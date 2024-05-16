@@ -1,0 +1,154 @@
+[gd_scene load_steps=10 format=3 uid="uid://ce5stbiwgp6c5"]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1_q7lvt"]
+[ext_resource type="Texture2D" uid="uid://d4f4orgjhcwy" path="res://assets/fundo.jpeg" id="2_j52b1"]
+[ext_resource type="PackedScene" uid="uid://dnvt4ype3yfed" path="res://scenes/ball.tscn" id="3_kp33s"]
+[ext_resource type="PackedScene" uid="uid://c7d5bcwb2hiax" path="res://scenes/player.tscn" id="4_4ulso"]
+[ext_resource type="PackedScene" uid="uid://3h2dxmbtp3gq" path="res://scenes/brick.tscn" id="5_2b0ny"]
+[ext_resource type="AudioStream" uid="uid://dejsw7w26viki" path="res://assets/Pop.ogg" id="6_t25x8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51sye"]
+size = Vector2(541.352, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34fjw"]
+size = Vector2(47, 685)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ag2u0"]
+size = Vector2(552, 44)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_q7lvt")
+
+[node name="Fundo" type="Sprite2D" parent="."]
+position = Vector2(201, 323)
+texture = ExtResource("2_j52b1")
+
+[node name="Top" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
+position = Vector2(251, -26)
+scale = Vector2(1.03287, 1.16242)
+shape = SubResource("RectangleShape2D_51sye")
+
+[node name="Left" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+position = Vector2(-5, 329)
+shape = SubResource("RectangleShape2D_34fjw")
+
+[node name="Right" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+position = Vector2(504, 332)
+shape = SubResource("RectangleShape2D_34fjw")
+
+[node name="Down" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Down"]
+position = Vector2(254, 660)
+shape = SubResource("RectangleShape2D_ag2u0")
+
+[node name="Ball" parent="." instance=ExtResource("3_kp33s")]
+position = Vector2(245, 338)
+
+[node name="Player" parent="." instance=ExtResource("4_4ulso")]
+position = Vector2(255, 612)
+
+[node name="Bricks" type="Node" parent="."]
+
+[node name="brick" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(69, 41)
+
+[node name="brick2" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(158, 41)
+
+[node name="brick3" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(253, 40)
+
+[node name="brick4" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(343, 41)
+
+[node name="brick5" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(435, 41)
+
+[node name="brick6" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(114, 64)
+
+[node name="brick7" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(208, 65)
+
+[node name="brick8" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(300, 65)
+
+[node name="brick9" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(389, 65)
+
+[node name="brick10" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(69, 91)
+
+[node name="brick11" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(158, 91)
+
+[node name="brick12" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(253, 90)
+
+[node name="brick13" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(343, 91)
+
+[node name="brick14" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(435, 91)
+
+[node name="brick15" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(114, 114)
+
+[node name="brick18" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(389, 115)
+
+[node name="brick17" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(300, 115)
+
+[node name="brick16" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(208, 115)
+
+[node name="brick19" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(67, 140)
+
+[node name="brick20" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(156, 140)
+
+[node name="brick21" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(251, 139)
+
+[node name="brick22" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(341, 140)
+
+[node name="brick23" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(433, 140)
+
+[node name="brick24" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(112, 163)
+
+[node name="brick25" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(206, 164)
+
+[node name="brick26" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(298, 164)
+
+[node name="brick27" parent="Bricks" instance=ExtResource("5_2b0ny")]
+position = Vector2(387, 164)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_t25x8")
+
+[connection signal="body_entered" from="Top" to="." method="_on_top_body_entered"]
+[connection signal="body_entered" from="Left" to="." method="_on_left_body_entered"]
+[connection signal="body_entered" from="Right" to="." method="_on_right_body_entered"]
+[connection signal="body_entered" from="Down" to="." method="_on_down_body_entered"]

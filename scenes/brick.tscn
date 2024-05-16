@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://3h2dxmbtp3gq"]
+
+[ext_resource type="Script" path="res://scripts/brick.gd" id="1_1e275"]
+[ext_resource type="Texture2D" uid="uid://dew4d4gnb26rc" path="res://assets/imagens-de-nuvem-azul-png-0.png" id="2_7jxcb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxxqf"]
+size = Vector2(79, 20)
+
+[node name="brick" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_1e275")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_pxxqf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-2, -1)
+rotation = -0.00935054
+scale = Vector2(0.0412497, 0.0341129)
+texture = ExtResource("2_7jxcb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
